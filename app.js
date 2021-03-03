@@ -97,6 +97,7 @@ const engineerQuestions = function () {
     ]).then(answers => {
         console.log(answers)
         let newEngineer = new Engineer(answers.name, answers.id, answers.email, answers.github, answers.teamMember)
+        //push newEngineer to the end of the newTeam Array
         newTeam.push(newEngineer)
         if (answers.teamMember === 'Engineer'){
             console.log('Add a Engineer')
@@ -147,7 +148,8 @@ const internQuestions = function () {
         }
     ]).then(answers => {
         console.log(answers)
-        let newIntern = new Intern(answers.name, answers.id, answers.email, answers.github, answers.teamMember)
+        let newIntern = new Intern(answers.name, answers.id, answers.email, answers.school)
+        // push newIntern to the back of the newTeam Array
         newTeam.push(newIntern)
         if (answers.teamMember === 'Engineer'){
             console.log('Add a Engineer')
