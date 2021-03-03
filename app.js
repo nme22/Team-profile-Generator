@@ -21,7 +21,7 @@ const questions =[
     {
         type: 'input',
         name: 'id',
-        message: 'What EngineersManagers ID?'
+        message: 'What is the Managers ID?'
     },
     {
         type: 'input',
