@@ -33,6 +33,17 @@ const questions =[
         name: 'offficeNumber',
         message: 'What is the office number of your Manager?'
     },
+    {
+        // Make a list type of the kind of employee you're adding to the team
+        type: 'list',
+        name: 'teamMember',
+        message: 'Any team members you want to add?',
+        choices: [
+            'Engineer',
+            'Intern',
+            'None'
+        ]
+    }
 ]
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
