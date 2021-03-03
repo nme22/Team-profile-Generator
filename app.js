@@ -117,22 +117,22 @@ const internQuestions = function () {
         {
             type: 'input',
             name: 'name',
-            message: 'What is the name of your Engineer?'
+            message: 'What is the name of your Intern?'
         },
         {
             type: 'input',
             name: 'id',
-            message: 'What is your Engineers ID?'
+            message: 'What is your Interns ID?'
         },
         {
             type: 'input',
             name: 'email',
-            message: ' What is the Engineers email?'
+            message: ' What is the Interns email?'
         },
         {
             type: 'input',
             name: 'github',
-            message: 'What is your Engineers github username?'
+            message: 'What is your Interns github username?'
         },
         {
             // Make a list type of the kind of employee you're adding to the team
