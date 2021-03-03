@@ -99,7 +99,7 @@ const engineerQuestions = function () {
         let newEngineer = new Engineer(answers.name, answers.id, answers.email, answers.github, answers.teamMember)
         newTeam.push(newEngineer)
         if (answers.teamMember === 'Engineer'){
-            console.log('they would like to add a Engineer')
+            console.log('Add a Engineer')
             engineerQuestions()
         }else if(answers.teamMember === 'Intern'){
             internQuestions()
@@ -111,18 +111,57 @@ const engineerQuestions = function () {
         }
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
+const internQuestions = function () {
+    console.log('Time for an Internship!!')
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of your Engineer?'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is your Engineers ID?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: ' What is the Engineers email?'
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'What is your Engineers github username?'
+        },
+        {
+            // Make a list type of the kind of employee you're adding to the team
+            type: 'list',
+            name: 'teamMember',
+            message: 'Any team members you want to add?',
+            choices: [
+                'Engineer',
+                'Intern',
+                'None'
+            ]
+        }
+    ]).then(answers => {
+        console.log(answers)
+        let newIntern = new Intern(answers.name, answers.id, answers.email, answers.github, answers.teamMember)
+        newTeam.push(newIntern)
+        if (answers.teamMember === 'Engineer'){
+            console.log('Add a Engineer')
+            engineerQuestions()
+        }else if(answers.teamMember === 'Intern'){
+            internQuestions()
+        } else {
+            console.log('No new team member!')
+            let teamHTML = render(newTeam)
+            fs.writeFile('./product/team.html', teamHTML, (err) =>
+            err ? console.log(err) : console.log('Done!'))
+        }
+    })
+}
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
