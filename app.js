@@ -30,7 +30,7 @@ const questions =[
     },
     {
         type: 'input',
-        name: 'offficeNumber',
+        name: 'officeNumber',
         message: 'What is the office number of your Manager?'
     },
     {
@@ -131,8 +131,8 @@ const internQuestions = function () {
         },
         {
             type: 'input',
-            name: 'github',
-            message: 'What is your Interns github username?'
+            name: 'school',
+            message: 'What is your Interns school?'
         },
         {
             // Make a list type of the kind of employee you're adding to the team
