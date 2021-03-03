@@ -46,6 +46,19 @@ const questions =[
     }
 ]
 
+inquirer.prompt(questions).then(answers => {
+    console.log(answers);
+    //log the new employee
+
+    let newManager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+    // pass the new employee to the newTeam array
+    newTeam.push(newManager);
+    if(answers.teamMember === 'Engineer') {
+        console.log('adding an Enineer to the team!')
+        engineerQuestions()
+    }
+})
+
 
 const engineerQuestions = function () {
     console.log('We are adding an engineer to the team!')
@@ -89,7 +102,12 @@ const engineerQuestions = function () {
             console.log('they would like to add a Engineer')
             engineerQuestions()
         }else if(answers.teamMember === 'Intern'){
-            
+            internQuestions()
+        } else {
+            console.log('No new team member!')
+            let teamHTML = render(newTeam)
+            fs.writeFile('./product/team.html', teamHTML, (err) =>
+            err ? console.log(err) : console.log('Done!'))
         }
     })
 }
